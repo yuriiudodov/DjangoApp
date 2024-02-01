@@ -4,15 +4,21 @@ from django.template.defaultfilters import first
 
 def index(request):
     context = {
-        'title':'Home',
-        'content':'Главная страница магазина - HOME',
-        'list': ['first', 'second'],
-        'dict': {'first':1},
-        'is_authenticated':False
+        'title':'Home - Главная',
+        'content':'Магазин мебели HOME'
+        
     }
+
     return render(request, 'main/index.html', context) #HttpResponse('Home page')
 
 
 def about(request):
-    return HttpResponse('About page')
+    context = {
+        'title':'Home - О Нас',
+        'content':'О нас',
+        'text_on_page':'уээээ странный текст'
+        
+    }
+
+    return render(request, 'main/about.html', context) #HttpResponse('Home page')
 # Create your views here.
